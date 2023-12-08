@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business\StockApp.Busines\StockApp.Busines.csproj" />
+    <ProjectReference Include="..\..\DataAccess\StockApp.DataAccess\StockApp.DataAccess.csproj" />
+  </ItemGroup>
+
 </Project>
