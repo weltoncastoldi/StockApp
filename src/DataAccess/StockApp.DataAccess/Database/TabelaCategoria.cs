@@ -10,15 +10,18 @@ namespace StockApp.DataAccess.Database
             var sql = @"
                         CREATE TABLE Categorias
                         (
-                          Id int,
-                          Nome varchar(100)
+                          Id int PRIMARY KEY IDENTITY,
+                          Nome varchar(100),
+                          Status bit,
+                          DataCriacao date,
+                          DataAlteracao date,
                         )
                        ";
             try
             {
                 using (var conexao = new SqlConnection(SqlServerContext.ConexaoComBanco))
                 {
-                    //conexao.Open();
+                    conexao.Open();
                     var resultado = conexao.Execute(sql);
                 }
             }

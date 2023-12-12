@@ -25,7 +25,7 @@ namespace StockApp.Presentation
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
                 throw;
             }
 
