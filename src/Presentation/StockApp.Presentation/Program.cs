@@ -1,4 +1,3 @@
-using StockApp.Busines.Interface.Database;
 using StockApp.WindowsForms._inicializar;
 using StockApp.WindowsForms.Cadastros;
 

@@ -12,11 +12,11 @@ namespace StockApp.DataAccess.Database
                     BEGIN
                             CREATE TABLE Categorias
                             (
-                              Id int PRIMARY KEY IDENTITY,
-                              Nome varchar(100),
-                              Status bit,
-                              DataCriacao date,
-                              DataAlteracao date,
+                                Id int PRIMARY KEY IDENTITY,
+                                Nome varchar(100) NOT NULL,
+                                Status bit DEFAULT 1,
+                                DataCriacao date NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                                DataAlteracao date NOT NULL DEFAULT CURRENT_TIMESTAMP,
                             );
                     END;";
             try

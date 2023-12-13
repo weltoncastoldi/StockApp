@@ -18,7 +18,7 @@ namespace StockApp.WindowsForms.Cadastros
         public frmCategoria()
         {
             InitializeComponent();
-            
+
         }
         public frmCategoria(ICategoriaRepository categoriaRepositorio)
         {
@@ -33,7 +33,7 @@ namespace StockApp.WindowsForms.Cadastros
             var resultado = _categoriaRepositorio.Incluir(novaCategoria);
             if (resultado)
             {
-                MessageBox.Show("Usuario cadastrado com Sucesso!!");
+                MessageBox.Show("Categoria cadastrada com Sucesso!!");
             }
             else
             {

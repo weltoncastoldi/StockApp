@@ -1,10 +1,7 @@
-﻿using StockApp.Busines.Entties;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
+using StockApp.Busines.Entties;
 using StockApp.Busines.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StockApp.DataAccess.Repositorios
 {
@@ -32,7 +29,24 @@ namespace StockApp.DataAccess.Repositorios
 
         public bool Incluir(Categoria categoria)
         {
-            throw new NotImplementedException();
+            var sql = @"
+                INSERT INTO Categorias (Nome, Status)
+                VALUES (@Nome, @Status)";
+
+            try
+            {
+                using (var conexao = new SqlConnection(SqlServerContext.ConexaoComBanco))
+                {
+                    conexao.Open();
+                    var resultado = conexao.Execute(sql, categoria);
+                    return resultado > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         public Categoria ObterPorId(int id)
